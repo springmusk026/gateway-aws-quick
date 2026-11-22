@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Plain neutral palette in shadcn's variable layout. Dark mode follows the phone or browser setting. */
+:root {
+  --background: #fafafa;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --primary: #171717;
+  --primary-foreground: #fafafa;
+  --secondary: #efefef;
+  --secondary-foreground: #171717;
+  --muted: #f2f2f2;
+  --muted-foreground: #6b6b6b;
+  --accent: #ececec;
+  --accent-foreground: #171717;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #e2e2e2;
+  --input: #d6d6d6;
+  --ring: #171717;
+  --success: #1f7a3d;
+  --warning: #9a5b00;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0f0f0f;
+    --foreground: #f2f2f2;
+    --card: #171717;
+    --card-foreground: #f2f2f2;
+    --primary: #f2f2f2;
+    --primary-foreground: #111111;
+    --secondary: #222222;
+    --secondary-foreground: #f2f2f2;
+    --muted: #1c1c1c;
+    --muted-foreground: #9a9a9a;
+    --accent: #232323;
+    --accent-foreground: #f2f2f2;
+    --destructive: #f2b8b5;
+    --destructive-foreground: #111111;
+    --border: #2b2b2b;
+    --input: #3a3a3a;
+    --ring: #f2f2f2;
+    --success: #7fd19b;
+    --warning: #f0b860;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+code,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
