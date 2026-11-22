@@ -6,6 +6,7 @@ import { ToastProvider, useToast } from '@/components/ui/toast'
 import { api, ApiError, messageOf, type Account, type ApiKeyRecord, type AuthState } from '@/lib/api'
 import { TAB_IDS, type Resource, type Tab } from '@/lib/admin'
 import { cn } from '@/lib/utils'
+import { EduNotice } from '@/components/EduNotice'
 import { LoginForm } from '@/LoginForm'
 import { OverviewPanel } from '@/OverviewPanel'
 import { AccountsPanel } from '@/AccountsPanel'
@@ -262,6 +263,8 @@ function Admin({ onSignOut, onAuthLost }: { onSignOut: () => void; onAuthLost: (
           </ul>
         </nav>
 
+        <EduNotice className="border-t border-border px-4 py-3" />
+
         <div className="border-t border-border p-2">
           <button
             type="button"
@@ -347,6 +350,7 @@ function Shell({ children, action }: { children: ReactNode; action?: ReactNode }
         {action}
       </header>
       {children}
+      <EduNotice className="mx-auto mt-auto max-w-md pt-8" />
     </div>
   )
 }

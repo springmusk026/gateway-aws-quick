@@ -1,6 +1,10 @@
 // Local smoke test: drives the bundled Worker (wrangler --dry-run output) with a fake KV.
 // Test data only. The fake Quick session never reaches AWS (region and issuer do not resolve).
-const worker = (await import(process.env.QG_BUNDLE ?? '/tmp/qg-out/index.js')).default
+// Bundle path: first CLI argument, else QG_BUNDLE, else /tmp/qg-out/index.js.
+import path from 'node:path'
+import { pathToFileURL } from 'node:url'
+const bundlePath = path.resolve(process.argv[2] ?? process.env.QG_BUNDLE ?? '/tmp/qg-out/index.js')
+const worker = (await import(pathToFileURL(bundlePath).href)).default
 
 class FakeKV {
   constructor() { this.m = new Map() }
